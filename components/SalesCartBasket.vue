@@ -1,14 +1,10 @@
 <template>
-  <div class="aside-big" 
-style="min-height: 80px;">
-    <div class="cart-sale-box"
-style="min-height: 80px;">
+  <div class="aside-big" style="min-height: 80px;">
+    <div class="cart-sale-box" style="min-height: 80px;">
       <el-collapse v-model="activeNames">
-        <el-collapse-item title="Basket"
-name="basket">
+        <el-collapse-item title="Basket" name="basket">
           <template v-for="assortment in getSale.assortments">
-            <div :key="assortment.id" 
-@click="update(assortment.id)">
+            <div :key="assortment.id" @click="update(assortment.id)">
               <div class="cart-box-item__row1">
                 <span>{{ assortment.code }}</span>
                 <span>{{ parseFloat(assortment.full_price).toFixed(2) }}€</span>
@@ -25,7 +21,8 @@ name="basket">
 
       <div class="cart-box__footer">
         <strong
-        >Total price: <span>{{ parseFloat(getSale.total).toFixed(2) }}€</span></strong
+        >Total price:
+        <span>{{ parseFloat(getSale.total).toFixed(2) }}€</span></strong
         >
       </div>
     </div>

@@ -1,6 +1,5 @@
 <template>
-  <el-row type="flex" 
-style="height: 80px;">
+  <el-row type="flex" style="height: 80px;">
     <el-col class="search-input-wrapper">
       <div class="search-group">
         <el-input
@@ -25,8 +24,7 @@ style="height: 80px;">
 <script>
 export default {
   data() {
-    return {
-    }
+    return {}
   },
   computed: {
     getSearchInput: {
@@ -44,7 +42,6 @@ export default {
     // Reset Search filter
     this.$store.dispatch('search', '')
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>

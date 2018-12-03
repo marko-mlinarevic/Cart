@@ -60,7 +60,7 @@ export default {
     }
   },
   methods: {
-      // Method that set active step
+    // Method that set active step
     setActiveStep(direction) {
       if (direction === 'back') {
         let activeStep
@@ -97,49 +97,47 @@ export default {
     },
     // Method that finishes Sale
     saveSale() {
-      this.$confirm(
-        'Are you sure that you want to finish the sale?'
-      ).then(_ => {
-        if (this.getSale.date === null) {
-          this.$alert(
-            'Please enter the date before finishing the sale',
-            'Warning',
-            {
-              confirmButtonText: 'OK'
-            }
-          )
-        } else {
-          let assortments = []
-
-          this.getSale.assortments.forEach(item => {
-            let newObject = {
-              assortment_id: item.id,
-              quantity: item.quantity,
-              assortment_price: item.price
-            }
-
-            assortments.push(newObject)
-          })
-
-          let saleData = {
-            total_price: this.getSale.total,
-            assortments: assortments,
-            note: this.getSale.note,
-            quantity: this.getSale.quantity,
-            created_at: this.getSale.date
-          }
-
-          this.$store.dispatch('completeSale', saleData)
-        }
-      })
-    },
-      // Method that resets sale
-    resetSale() {
-      this.$confirm('Are you sure that you want to reset the sale?').then(
+      this.$confirm('Are you sure that you want to finish the sale?').then(
         _ => {
-          this.$store.dispatch('saleReset')
+          if (this.getSale.date === null) {
+            this.$alert(
+              'Please enter the date before finishing the sale',
+              'Warning',
+              {
+                confirmButtonText: 'OK'
+              }
+            )
+          } else {
+            let assortments = []
+
+            this.getSale.assortments.forEach(item => {
+              let newObject = {
+                assortment_id: item.id,
+                quantity: item.quantity,
+                assortment_price: item.price
+              }
+
+              assortments.push(newObject)
+            })
+
+            let saleData = {
+              total_price: this.getSale.total,
+              assortments: assortments,
+              note: this.getSale.note,
+              quantity: this.getSale.quantity,
+              created_at: this.getSale.date
+            }
+
+            this.$store.dispatch('completeSale', saleData)
+          }
         }
       )
+    },
+    // Method that resets sale
+    resetSale() {
+      this.$confirm('Are you sure that you want to reset the sale?').then(_ => {
+        this.$store.dispatch('saleReset')
+      })
     }
   }
 }

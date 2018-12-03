@@ -2,9 +2,7 @@
   <el-row style="height: 80px" type="flex" class="view-header sales">
     <div class="main-title-left flex-el-left-center"><h1>Cart title</h1></div>
     <div class="flex-el-left-center flex-el-margin-right">
-      <div>
-        <span>Date of buying: </span>
-      </div>
+      <div><span>Date of buying: </span></div>
     </div>
     <div class="flex-el-left-center">
       <el-date-picker

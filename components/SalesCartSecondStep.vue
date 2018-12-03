@@ -1,10 +1,8 @@
 <template>
   <div class="sales-step-4">
-    <el-row :gutter="10" 
-class="sales-content-row-detached">
+    <el-row :gutter="10" class="sales-content-row-detached">
       <el-col :span="16">
-        <div :span="16" 
-class="sales-content-col with-margin-right">
+        <div :span="16" class="sales-content-col with-margin-right">
           <h5>Sale note</h5>
           <el-input
             :rows="7"

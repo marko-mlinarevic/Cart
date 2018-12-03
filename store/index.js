@@ -17,7 +17,7 @@ const createStore = () => {
       assortments: [],
       assortmentsClone: [],
       searchInput: '',
-      searchAssortmentsResult: '',
+      searchAssortmentsResult: ''
     }),
     mutations: {
       // Set date of sale
@@ -32,7 +32,7 @@ const createStore = () => {
 
       // Load assortments to table
       LOAD_ASSORTMENTS(state, assortments) {
-        state.assortments = assortments;
+        state.assortments = assortments
         state.assortmentsClone = assortments
       },
 
@@ -48,7 +48,8 @@ const createStore = () => {
         state.sale.assortments = []
 
         newValue.assortments.forEach((item, index) => {
-            item.assortment[0].full_price = item.assortment[0].quantity * item.assortment[0].price;
+          item.assortment[0].full_price =
+            item.assortment[0].quantity * item.assortment[0].price
           if (item.assortment[0].id === newValue.id) {
             state.sale.assortments = state.sale.assortments.filter(
               assortment => assortment.id != newValue.id
@@ -56,8 +57,8 @@ const createStore = () => {
             item.assortment[0].quantity = 0
             item.assortment[0].full_price = 0
           }
-          state.sale.total += item.assortment[0].full_price;
-          state.sale.total = parseFloat(state.sale.total.toFixed(2));
+          state.sale.total += item.assortment[0].full_price
+          state.sale.total = parseFloat(state.sale.total.toFixed(2))
           state.sale.quantity += parseFloat(item.assortment[0].quantity)
 
           if (item.assortment[0].quantity > 0) {
@@ -107,7 +108,7 @@ const createStore = () => {
         state.assortmentsClone = []
         state.searchInput = ''
         state.searchAssortmentsResult = ''
-      },
+      }
     },
     actions: {
       // Setting date of sale
@@ -160,29 +161,23 @@ const createStore = () => {
       },
       // Finishing sale
       completeSale({ commit, dispatch }, data) {
-        let strDay = data.created_at
-          ? data.created_at.slice(0, 2)
-          : ''
-        let strMonth = data.created_at
-          ? data.created_at.slice(3, 5) + '-'
-          : ''
-        let strYear = data.created_at
-          ? data.created_at.slice(6, 10) + '-'
-          : ''
+        let strDay = data.created_at ? data.created_at.slice(0, 2) : ''
+        let strMonth = data.created_at ? data.created_at.slice(3, 5) + '-' : ''
+        let strYear = data.created_at ? data.created_at.slice(6, 10) + '-' : ''
 
         let date =
           strYear !== '' || strMonth !== '' || strDay !== ''
             ? `${strYear}${strMonth}${strDay}`
             : null
 
-          console.log({
-              total_price: data.total_price,
-              assortments: data.assortments,
-              note: data.note,
-              created_at: date
-          })
-          commit('RESET_SALE')
-          // AXIOS CALL THAT SENDS DATA TO BACKEND
+        console.log({
+          total_price: data.total_price,
+          assortments: data.assortments,
+          note: data.note,
+          created_at: date
+        })
+        commit('RESET_SALE')
+        // AXIOS CALL THAT SENDS DATA TO BACKEND
         /*this.$axios
           .post(`/save.json`, {
             total_price: data.giftData.total_price,
@@ -227,7 +222,7 @@ const createStore = () => {
       // Search input value
       getSearchInput: state => {
         return state.searchInput
-      },
+      }
     }
   })
 }

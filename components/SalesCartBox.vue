@@ -1,7 +1,6 @@
 <template>
   <div class="container-medium">
-    <el-row style="height: 45px; min-width: 100%" 
-type="flex">
+    <el-row style="height: 45px; min-width: 100%" type="flex">
       <el-steps
         :active="getActiveStep.activeStep"
         finish-status="success"
