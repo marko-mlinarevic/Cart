@@ -3,11 +3,10 @@
     <el-row style="width: 100%" type="flex">
       <el-steps
         :active="getActiveStep.activeStep"
-        finish-status="success"
         class="stepper"
       >
-        <el-step title="Choice of products" />
-        <el-step title="Note" />
+        <el-step title="Choice of products" icon="el-icon-goods" />
+        <el-step title="Note" icon="el-icon-edit" />
       </el-steps>
     </el-row>
     <el-row>
