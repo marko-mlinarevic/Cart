@@ -1,12 +1,12 @@
 <template>
   <div class="container-medium">
-    <el-row style="height: 45px; min-width: 100%" type="flex">
+    <el-row style="width: 100%" type="flex">
       <el-steps
         :active="getActiveStep.activeStep"
         finish-status="success"
         class="stepper"
       >
-        <el-step title="Choice of product" />
+        <el-step title="Choice of products" />
         <el-step title="Note" />
       </el-steps>
     </el-row>
@@ -20,13 +20,13 @@
 <style lang="scss" scoped></style>
 
 <script>
-import SalesCartFirstStep from '~/components/SalesCartFirstStep.vue'
-import SalesCartSecondStep from '~/components/SalesCartSecondStep.vue'
+import CartFirstStep from '~/components/CartFirstStep.vue'
+import CartSecondStep from '~/components/CartSecondStep.vue'
 
 export default {
   components: {
-    elCartFirstStep: SalesCartFirstStep,
-    elCartSecondStep: SalesCartSecondStep
+    elCartFirstStep: CartFirstStep,
+    elCartSecondStep: CartSecondStep
   },
   data() {
     return {}

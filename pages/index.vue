@@ -1,15 +1,15 @@
 <template>
   <div>
-    <el-sales-head />
+    <el-head />
 
     <el-row type="flex" 
 class="view-container">
-      <el-sales-cart-box />
-      <el-sales-cart-basket />
+      <el-cart-box />
+      <el-cart-basket />
     </el-row>
 
     <el-row type="flex">
-      <el-col :span="24"> <el-sales-cart-footer /> </el-col>
+      <el-col :span="24"> <el-cart-footer /> </el-col>
     </el-row>
   </div>
 </template>
@@ -21,17 +21,17 @@ class="view-container">
 </style>
 
 <script>
-import SalesHead from '~/components/SalesHead.vue'
-import SalesCartBox from '~/components/SalesCartBox.vue'
-import SalesCartBasket from '~/components/SalesCartBasket.vue'
-import SalesCartFooter from '~/components/SalesCartFooter.vue'
+import Head from '~/components/Head.vue'
+import CartBox from '~/components/CartBox.vue'
+import CartBasket from '~/components/CartBasket.vue'
+import CartFooter from '~/components/CartFooter.vue'
 
 export default {
   components: {
-    elSalesHead: SalesHead,
-    elSalesCartBox: SalesCartBox,
-    elSalesCartBasket: SalesCartBasket,
-    elSalesCartFooter: SalesCartFooter
+    elHead: Head,
+    elCartBox: CartBox,
+    elCartBasket: CartBasket,
+    elCartFooter: CartFooter
   }
 }
 </script>

@@ -15,7 +15,7 @@
 <style scoped lang="scss">
 .search-input-wrapper {
   .search-group {
-    width: 410px;
+    width: 200px;
     height: 40px;
   }
 }

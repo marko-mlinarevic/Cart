@@ -22,7 +22,7 @@
   position: relative;
   min-width: 400px;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .search-group {
@@ -129,51 +129,13 @@ body {
 
 // steps overrides
 .stepper {
-  padding: 0 40px;
+  padding: 5px 40px 0;
   width: 100%;
   border-bottom: 1px solid white;
   background: #fff;
+
   .el-step.is-horizontal {
-    margin-right: 60px !important;
-    flex-basis: auto !important;
-    .el-step__line {
-      display: none;
-    }
-  }
-  .el-step__head {
-    width: auto;
-    margin-right: 10px;
-    &.is-process {
-      .el-step__icon.is-text {
-        background-color: #000000;
-      }
-    }
-    &.is-wait {
-      .el-step__icon.is-text {
-        background-color: gray;
-      }
-    }
-    &.is-success {
-      .el-step__icon.is-text {
-        background-color: #7CFC00;
-      }
-    }
-  }
-  .el-step__head,
-  .el-step__main {
-    display: inline-block;
-  }
-  .el-step__icon {
-    width: 21px;
-    height: 21px;
-    font-size: 13px;
-  }
-  .el-step__icon.is-text {
-    border: none;
-    color: #fff;
-  }
-  .el-step__title {
-    font-size: 14px;
+    flex-basis: 20% !important;
   }
 }
 

@@ -1,6 +1,13 @@
 <template>
   <div class="sales-footer" 
 style="min-height: 55px;">
+    <el-button
+            :disabled="getActiveStep.activeStep === 0"
+            type="text"
+            size="mini"
+            @click="resetSale"
+    >Reset sale</el-button
+    >
     <template v-if="getActiveStep.activeStep > 0">
       <el-button
         type="primary"
@@ -33,13 +40,6 @@ style="min-height: 55px;">
       size="mini"
       @click="saveSale"
     ><i class="el-icon-check" /> Finish sale</el-button
-    >
-    <el-button
-      :disabled="getActiveStep.activeStep === 0"
-      type="text"
-      size="mini"
-      @click="resetSale"
-    >Reset sale</el-button
     >
   </div>
 </template>

@@ -128,10 +128,6 @@ const createStore = () => {
             if (data) {
               let assortments = data.data.data
 
-              //assortments.filter(assortment => (assortment.id === ));
-
-              // full_price_without_discount_gift
-              // price_sm_gift
               assortments.forEach(item => {
                 item.assortment[0].quantity = 0
                 item.assortment[0].full_price = 0
@@ -180,9 +176,9 @@ const createStore = () => {
         // AXIOS CALL THAT SENDS DATA TO BACKEND
         /*this.$axios
           .post(`/save.json`, {
-            total_price: data.giftData.total_price,
-            consummation_assortments: data.giftData.gift_assortments,
-            consummation_note: data.giftData.gift_note,
+            total_price: data.total_price,
+            assortments: data.assortments,
+            note: data.note,
             created_at: date
           })
           .then(response => response)

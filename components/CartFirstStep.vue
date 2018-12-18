@@ -1,19 +1,19 @@
 <template>
   <div>
     <el-search />
-    <el-sales-table />
+    <el-table />
   </div>
 </template>
 
 <style lang="scss"></style>
 
 <script>
-import SalesTable from '~/components/SalesTable.vue'
-import Search from '~/components/SearchAssortments.vue'
+import Table from '~/components/Table.vue'
+import Search from '~/components/Search.vue'
 
 export default {
   components: {
-    elSalesTable: SalesTable,
+    elTable: Table,
     elSearch: Search
   }
 }
