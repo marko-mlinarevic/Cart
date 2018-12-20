@@ -21,7 +21,7 @@ $ npm run generate
 ## Documentation
 
 ```
-Go to folder "out/index.html" 
+Go to folder "http://vuecartdocumentation.mythossoftware.com/" 
 ```
 
 
