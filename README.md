@@ -20,9 +20,4 @@ $ npm run generate
 ```
 ## Documentation
 
-```
-Go to folder "http://vuecartdocumentation.mythossoftware.com/" 
-```
-
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+For detailed explanation on how things work, checkout [Cart docs](http://vuecartdocumentation.mythossoftware.com/). and for more info about nuxt check [Nuxt.js docs]
