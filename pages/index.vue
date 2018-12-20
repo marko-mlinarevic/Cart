@@ -2,8 +2,7 @@
   <div>
     <el-head />
 
-    <el-row type="flex" 
-class="view-container">
+    <el-row type="flex" class="view-container">
       <el-cart-box />
       <el-cart-basket />
     </el-row>
@@ -21,10 +20,18 @@ class="view-container">
 </style>
 
 <script>
-import Head from '~/components/Head.vue'
-import CartBox from '~/components/CartBox.vue'
-import CartBasket from '~/components/CartBasket.vue'
-import CartFooter from '~/components/CartFooter.vue'
+import Head from '~/components/Head.vue';
+import CartBox from '~/components/CartBox.vue';
+import CartBasket from '~/components/CartBasket.vue';
+import CartFooter from '~/components/CartFooter.vue';
+
+/**
+ * @module {pages_index} Root_Element
+ * @param Head Component that contains date selection element
+ * @param Cart_Basket Component that contains basket that contains current active element
+ * @param Cart_Box Component that contains box that contains and show elements of steps
+ * @param Cart_Footer Component that contains navigation of sale
+ * */
 
 export default {
   components: {
@@ -33,5 +40,5 @@ export default {
     elCartBasket: CartBasket,
     elCartFooter: CartFooter
   }
-}
+};
 </script>

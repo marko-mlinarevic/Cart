@@ -18,5 +18,11 @@ $ npm start
 # generate static project
 $ npm run generate
 ```
+## Documentation
+
+```
+Go to folder "out/index.html" 
+```
+
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

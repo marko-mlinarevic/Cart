@@ -12,7 +12,7 @@
         format="dd.MM.yyyy"
         value-format="dd.MM.yyyy"
         size="mini"
-        @onPick="setSaleDate($event.target.value)"
+        @onPick="setSaleDate($event.target.value);"
       />
     </div>
   </el-row>
@@ -21,34 +21,48 @@
 <style lang="scss" scoped></style>
 
 <script>
+
+/**
+ * @module Head
+ * @vue-computed {Object} getSale Sale object
+ * */
+
 export default {
   computed: {
     getSale() {
-      return this.$store.getters['getSale']
+      return this.$store.getters['getSale'];
     }
   },
   mounted() {
-    this.todayDate()
+    this.todayDate();
   },
   methods: {
-    // Method for setting date in sale object
+   /**
+    * @param {String} event Event that contains date value
+    * @description Method for setting date in sale object
+    * */
+
     setSaleDate(event) {
-      let payload
-      payload === event.target.value
-      this.$store.dispatch('setSaleDate', payload)
+      let payload;
+      payload = event.target.value;
+      this.$store.dispatch('setSaleDate', payload);
     },
-    // Method that generates current date
+
+    /**
+     * @description Method that generates current date
+     * */
+
     todayDate() {
       let pad = s => {
-        return s < 10 ? '0' + s : s
-      }
-      let d = new Date()
+        return s < 10 ? '0' + s : s;
+      };
+      let d = new Date();
       this.getSale.date = [
         pad(d.getDate()),
         pad(d.getMonth() + 1),
         d.getFullYear()
-      ].join('.')
+      ].join('.');
     }
   }
-}
+};
 </script>

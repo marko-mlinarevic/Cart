@@ -4,7 +4,7 @@
       <el-collapse v-model="activeNames">
         <el-collapse-item title="Basket" name="basket">
           <template v-for="assortment in getSale.assortments">
-            <div :key="assortment.id" @click="update(assortment.id)">
+            <div :key="assortment.id" @click="update(assortment.id);">
               <div class="cart-box-item__row1">
                 <span>{{ assortment.code }}</span>
                 <span>{{ parseFloat(assortment.full_price).toFixed(2) }}€</span>
@@ -20,10 +20,7 @@
       </el-collapse>
 
       <div class="cart-box__footer">
-        <strong
-        >Total price:
-        <span>{{ parseFloat(getSale.total).toFixed(2) }}€</span></strong
-        >
+        <strong>Total price:<span>{{ parseFloat(getSale.total).toFixed(2) }}€</span></strong>
       </div>
     </div>
   </div>
@@ -31,28 +28,38 @@
 <style lang="scss"></style>
 
 <script>
+/**
+ * @module Cart_Basket
+ * @vue-data {String} [activeNames='basket'] Collapse element trigger
+ * @vue-computed {Object} getSale Sale object
+ * @vue-computed {Array} getAssortments List of assortments
+ * */
+
 export default {
   data() {
     return {
       activeNames: ['basket']
-    }
+    };
   },
   computed: {
     getSale() {
-      return this.$store.getters['getSale']
+      return this.$store.getters['getSale'];
     },
     getAssortments() {
-      return this.$store.getters['getAssortments']
+      return this.$store.getters['getAssortments'];
     }
   },
   methods: {
-    // Method that updates state of assortments
+    /**
+     * @param {Number} id Id of assortment
+     * @description Method that updates state of assortments
+     * */
     update(id) {
       this.$store.dispatch('updateValue', {
         assortments: this.getAssortments,
         id: id
-      })
+      });
     }
   }
-}
+};
 </script>

@@ -4,12 +4,7 @@
       <el-col :span="16">
         <div :span="16" class="sales-content-col with-margin-right">
           <h5>Sale note</h5>
-          <el-input
-            :rows="7"
-            v-model="getSale.note"
-            type="textarea"
-            placeholder="Please enter note if necessary"
-          />
+          <el-input :rows="7" v-model="getSale.note" type="textarea" placeholder="Please enter note if necessary" />
         </div>
       </el-col>
     </el-row>
@@ -23,12 +18,17 @@
 </style>
 
 <script>
+
+/**
+ * @module Cart_Second_Step
+ * @vue-computed {Object} getSale Sale object
+ * */
+
 export default {
   computed: {
-    // Method for getting note
     getSale() {
-      return this.$store.getters['getSale']
+      return this.$store.getters['getSale'];
     }
   }
-}
+};
 </script>
